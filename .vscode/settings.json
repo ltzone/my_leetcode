@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "*.v": "coq",
+    "iostream": "cpp"
+  }
+}
