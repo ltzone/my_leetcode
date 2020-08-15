@@ -3,6 +3,31 @@
 #include<string>
 using namespace std;
 
+
+class SearchFromMiddleSolution2 {
+public:
+    int longestPalindrome(string s) {
+        int maxsize = 0;
+        int leftPtr = 0;
+        int rightPtr = 0;
+        while (rightPtr < s.length()-1){
+            while (s[leftPtr] == s[rightPtr+1]){
+                rightPtr++;
+            }
+            int nextLeft = rightPtr+1;
+            while (leftPtr > 0 && rightPtr < s.length()-1 && s[leftPtr-1]==s[rightPtr+1]){
+                leftPtr--;rightPtr++;
+            }
+            if (maxsize<rightPtr-leftPtr+1){
+                maxsize=rightPtr-leftPtr+1;
+            }
+            leftPtr = nextLeft; rightPtr = nextLeft;
+        }
+        return maxsize;
+    }
+};
+
+
 class SearchFromMiddleSolution {
 public:
     string longestPalindrome(string s) {
