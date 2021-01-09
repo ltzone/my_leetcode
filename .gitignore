@@ -31,3 +31,4 @@
 *.out
 *.app
 codes/foo.cpp
+.DS_Store
